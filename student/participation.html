@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Participation - CODEX SIG</title>
+  <link rel="stylesheet" href="participation.css" />
+  <link rel="icon" href="../img/codexlogo.png" />
+</head>
+
+<body>
+  <aside class="sidebar">
+    <div class="sidebar-header">
+      <img src="../img/codexlogo.png" alt="CODEX" />
+      <span>CODEX SIG</span>
+    </div>
+    <nav class="sidebar-nav">
+      <a href="studentdashboard.html">Overview</a>
+      <a href="sessions.html">Sessions</a>
+      <a href="announcements.html">Announcements</a>
+      <a href="participation.html" class="active">Participation</a>
+      <a href="resources.html">Resources</a>
+      <a href="accountmanagement.html">Account Management</a>
+    </nav>
+    <div class="sidebar-footer">
+      <button class="btn btn-logout-sidebar" id="logoutBtn">Logout</button>
+    </div>
+  </aside>
+
+  <main class="dashboard">
+    <header class="dashboard-header">
+      <div>
+        <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle menu">☰</button>
+        <h1>Participation Overview</h1>
+        <p>Track your engagement and attendance in CODEX SIG activities.</p>
+      </div>
+    </header>
+
+    <section class="card participation-section">
+      <div class="section-header">
+        <h2>Your Statistics</h2>
+      </div>
+      <div class="participation-stats">
+        <div class="participation-item">
+          <span class="participation-label">Sessions Attended</span>
+          <strong>8 / 10</strong>
+          <div class="progress-bar">
+            <div class="progress-fill" style="width: 80%"></div>
+          </div>
+          <p class="helper-text">80% attendance rate</p>
+        </div>
+        <div class="participation-item">
+          <span class="participation-label">This Month</span>
+          <strong>82%</strong>
+          <div class="progress-bar">
+            <div class="progress-fill" style="width: 82%"></div>
+          </div>
+          <p class="helper-text">Monthly participation rate</p>
+        </div>
+        <div class="participation-item">
+          <span class="participation-label">Total Points</span>
+          <strong>245</strong>
+          <p class="helper-text">Earned through active participation</p>
+        </div>
+        <div class="participation-item">
+          <span class="participation-label">Workshops Completed</span>
+          <strong>5</strong>
+          <p class="helper-text">Out of 6 scheduled workshops</p>
+        </div>
+        <div class="participation-item">
+          <span class="participation-label">Projects Submitted</span>
+          <strong>3</strong>
+          <p class="helper-text">Active project contributions</p>
+        </div>
+        <div class="participation-item">
+          <span class="participation-label">Rank</span>
+          <strong>#12</strong>
+          <p class="helper-text">Out of 45 active members</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="card attendance-history">
+      <div class="section-header">
+        <h2>Recent Attendance</h2>
+      </div>
+      <div class="attendance-list">
+        <div class="attendance-item">
+          <div class="attendance-date">
+            <span class="date-day">15</span>
+            <span class="date-month">Nov</span>
+          </div>
+          <div class="attendance-content">
+            <h3>Intro to Web APIs</h3>
+            <p>Workshop • Room 201</p>
+            <span class="attendance-status present">Present</span>
+          </div>
+        </div>
+        <div class="attendance-item">
+          <div class="attendance-date">
+            <span class="date-day">8</span>
+            <span class="date-month">Nov</span>
+          </div>
+          <div class="attendance-content">
+            <h3>CodeLab: React Basics</h3>
+            <p>Workshop • Lab 2</p>
+            <span class="attendance-status present">Present</span>
+          </div>
+        </div>
+        <div class="attendance-item">
+          <div class="attendance-date">
+            <span class="date-day">1</span>
+            <span class="date-month">Nov</span>
+          </div>
+          <div class="attendance-content">
+            <h3>Monthly Meetup</h3>
+            <p>Meetup • Main Hall</p>
+            <span class="attendance-status absent">Absent</span>
+          </div>
+        </div>
+        <div class="attendance-item">
+          <div class="attendance-date">
+            <span class="date-day">25</span>
+            <span class="date-month">Oct</span>
+          </div>
+          <div class="attendance-content">
+            <h3>Git Workflow Session</h3>
+            <p>Session • Room 205</p>
+            <span class="attendance-status present">Present</span>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="participation.js"></script>
+</body>
+
+</html>
+

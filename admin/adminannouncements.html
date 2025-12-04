@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Announcements - Admin - CODEX SIG</title>
+  <link rel="stylesheet" href="adminannouncements.css" />
+  <link rel="icon" href="../img/codexlogo.png" />
+</head>
+
+<body>
+  <aside class="sidebar">
+    <div class="sidebar-header">
+      <img src="../img/codexlogo.png" alt="CODEX logo" />
+      <span>CODEX Admin</span>
+    </div>
+    <nav class="sidebar-nav">
+      <a href="admindashboard.html">Overview</a>
+      <a href="adminannouncements.html" class="active">Announcements</a>
+      <a href="adminsessions.html">Sessions</a>
+      <a href="adminmembers.html">Members</a>
+      <a href="../index.html">Site Home</a>
+    </nav>
+    <div class="sidebar-footer">
+      <button class="btn btn-logout-sidebar" id="logoutBtn">Logout</button>
+    </div>
+  </aside>
+
+  <main class="dashboard">
+    <header class="dashboard-header">
+      <div>
+        <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle menu">☰</button>
+        <h1>Manage Announcements</h1>
+        <p>Create and manage announcements for CODEX SIG members.</p>
+      </div>
+    </header>
+
+    <section class="card announcements-section">
+      <div class="section-header">
+        <h2>Create Announcement</h2>
+        <button class="btn btn-outline btn-sm" id="clearAnnouncement">Clear</button>
+      </div>
+      <form class="announcement-form" id="announcementForm">
+        <div class="form-row">
+          <label for="announcementTitle">Title</label>
+          <input type="text" id="announcementTitle" name="announcementTitle" placeholder="Enter announcement title" required />
+        </div>
+        <div class="form-row">
+          <label for="announcementBody">Message</label>
+          <textarea id="announcementBody" name="announcementBody" rows="4" placeholder="Write the announcement details" required></textarea>
+        </div>
+        <div class="form-row grid-row">
+          <label>
+            <span>Category</span>
+            <select id="announcementCategory" name="announcementCategory">
+              <option value="general">General</option>
+              <option value="urgent">Urgent</option>
+              <option value="event">Event</option>
+            </select>
+          </label>
+          <label>
+            <span>Visibility</span>
+            <select id="announcementVisibility" name="announcementVisibility">
+              <option value="members">Members only</option>
+              <option value="public">Public</option>
+            </select>
+          </label>
+        </div>
+        <button class="btn btn-primary" type="submit">Publish Announcement</button>
+      </form>
+
+      <div class="section-subheader">
+        <h3>Recent Announcements</h3>
+        <button class="btn btn-outline btn-sm" id="refreshAnnouncements">Refresh</button>
+      </div>
+      <div class="announcements-list" id="adminAnnouncementList">
+        <!-- JS populated -->
+      </div>
+    </section>
+  </main>
+
+  <script src="adminannouncements.js"></script>
+</body>
+
+</html>
+

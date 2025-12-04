@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Student View - Admin - CODEX SIG</title>
+  <link rel="stylesheet" href="adminpage.css" />
+  <link rel="icon" href="../img/codexlogo.png" />
+</head>
+
+<body>
+  <aside class="sidebar">
+    <div class="sidebar-header">
+      <img src="../img/codexlogo.png" alt="CODEX logo" />
+      <span>CODEX Admin</span>
+    </div>
+    <nav class="sidebar-nav">
+      <a href="admindashboard.html">Overview</a>
+      <a href="adminannouncements.html">Announcements</a>
+      <a href="adminsessions.html">Sessions</a>
+      <a href="adminmembers.html">Members</a>
+      <a href="../index.html">Site Home</a>
+    </nav>
+    <div class="sidebar-footer">
+      <button class="btn btn-logout-sidebar" id="logoutBtn">Logout</button>
+    </div>
+  </aside>
+
+  <main class="dashboard">
+    <header class="dashboard-header">
+      <div>
+        <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle menu">☰</button>
+        <h1>Student Overview</h1>
+        <p id="studentNameDisplay">Viewing student profile</p>
+      </div>
+      <div style="display: flex; gap: 12px; align-items: center;">
+        <button class="btn btn-outline" id="backBtn">← Back to Members</button>
+      </div>
+    </header>
+
+    <!-- Account Status Section -->
+    <section class="card account-status" id="accountStatus">
+      <div class="status-header">
+        <h2>Account Status</h2>
+        <span class="status-badge" id="memberStatus">Active Member</span>
+      </div>
+      <div class="status-details">
+        <div class="status-item">
+          <span class="status-label">Membership Type:</span>
+          <strong id="membershipType">Full Member</strong>
+        </div>
+        <div class="status-item">
+          <span class="status-label">Payment Status:</span>
+          <strong id="paymentStatus" class="status-pending">Pending Payment</strong>
+        </div>
+        <div class="status-item">
+          <span class="status-label">Student Number:</span>
+          <strong id="studentNumber">2024-XXXXX</strong>
+        </div>
+        <div class="status-item">
+          <span class="status-label">Program:</span>
+          <strong id="studentProgram">BS Computer Science</strong>
+        </div>
+        <div class="status-item">
+          <span class="status-label">Status:</span>
+          <strong id="studentStatus">Active</strong>
+        </div>
+        <div class="status-item">
+          <span class="status-label">Participation Rate:</span>
+          <strong id="participationRate">0%</strong>
+        </div>
+      </div>
+    </section>
+
+    <section class="grid stats">
+      <article class="card stat">
+        <span class="label">Upcoming Session</span>
+        <strong id="nextSessionDate">—</strong>
+        <p id="nextSessionTitle">No upcoming sessions</p>
+      </article>
+      <article class="card stat">
+        <span class="label">Announcements</span>
+        <strong id="announcementCount">0</strong>
+        <p>Unseen updates</p>
+      </article>
+      <article class="card stat">
+        <span class="label">Participation</span>
+        <strong id="participationRateStat">0%</strong>
+        <p>This month</p>
+      </article>
+    </section>
+
+    <section class="card participation-section compact" id="participation">
+      <div class="section-header">
+        <h2>Participation Overview</h2>
+      </div>
+      <div class="participation-stats">
+        <div class="participation-item">
+          <span class="participation-label">Sessions Attended</span>
+          <strong id="sessionsAttended">0 / 0</strong>
+          <div class="progress-bar">
+            <div class="progress-fill" id="sessionsProgress" style="width: 0%"></div>
+          </div>
+          <p class="helper-text" id="sessionsHelper">No sessions attended yet</p>
+        </div>
+        <div class="participation-item">
+          <span class="participation-label">Monthly Rate</span>
+          <strong id="monthlyRate">0%</strong>
+          <div class="progress-bar">
+            <div class="progress-fill" id="monthlyProgress" style="width: 0%"></div>
+          </div>
+          <p class="helper-text" id="monthlyHelper">No activity this month</p>
+        </div>
+        <div class="participation-item">
+          <span class="participation-label">Total Points</span>
+          <strong id="totalPoints">0</strong>
+          <p class="helper-text">Earned through completed activities</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <script src="viewstudent.js"></script>
+</body>
+
+</html>
+

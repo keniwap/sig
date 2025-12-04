@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Resources - CODEX SIG</title>
+  <link rel="stylesheet" href="resources.css" />
+  <link rel="icon" href="../img/codexlogo.png" />
+</head>
+
+<body>
+  <aside class="sidebar">
+    <div class="sidebar-header">
+      <img src="../img/codexlogo.png" alt="CODEX" />
+      <span>CODEX SIG</span>
+    </div>
+    <nav class="sidebar-nav">
+      <a href="studentdashboard.html">Overview</a>
+      <a href="sessions.html">Sessions</a>
+      <a href="announcements.html">Announcements</a>
+      <a href="participation.html">Participation</a>
+      <a href="resources.html" class="active">Resources</a>
+      <a href="accountmanagement.html">Account Management</a>
+    </nav>
+    <div class="sidebar-footer">
+      <button class="btn btn-logout-sidebar" id="logoutBtn">Logout</button>
+    </div>
+  </aside>
+
+  <main class="dashboard">
+    <header class="dashboard-header">
+      <div>
+        <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle menu">☰</button>
+        <h1>Resources</h1>
+        <p>Access coding tutorials, project templates, and study materials.</p>
+      </div>
+    </header>
+
+    <section class="card resources-section">
+      <div class="section-header">
+        <h2>Learning Materials</h2>
+        <input type="text" class="search-input" placeholder="Search resources..." id="searchInput" />
+      </div>
+      <div class="resources-grid" id="resourcesGrid">
+        <div class="resource-item">
+          <div class="resource-icon">📚</div>
+          <h3>Web Development Basics</h3>
+          <p>Complete guide to HTML, CSS, and JavaScript fundamentals. Perfect for beginners.</p>
+          <a href="#" class="btn btn-outline">View</a>
+        </div>
+        <div class="resource-item">
+          <div class="resource-icon">⚛️</div>
+          <h3>React Tutorial Series</h3>
+          <p>Step-by-step React tutorials covering hooks, components, and state management.</p>
+          <a href="#" class="btn btn-outline">View</a>
+        </div>
+        <div class="resource-item">
+          <div class="resource-icon">🗄️</div>
+          <h3>Database Design Guide</h3>
+          <p>Learn database normalization, relationships, and SQL best practices.</p>
+          <a href="#" class="btn btn-outline">View</a>
+        </div>
+        <div class="resource-item">
+          <div class="resource-icon">🔧</div>
+          <h3>Git & Version Control</h3>
+          <p>Master Git workflows, branching strategies, and collaboration techniques.</p>
+          <a href="#" class="btn btn-outline">View</a>
+        </div>
+        <div class="resource-item">
+          <div class="resource-icon">📦</div>
+          <h3>Project Templates</h3>
+          <p>Ready-to-use project templates for web applications and APIs.</p>
+          <a href="#" class="btn btn-outline">View</a>
+        </div>
+        <div class="resource-item">
+          <div class="resource-icon">🎨</div>
+          <h3>UI/UX Design Resources</h3>
+          <p>Design principles, color palettes, and component libraries for modern web apps.</p>
+          <a href="#" class="btn btn-outline">View</a>
+        </div>
+        <div class="resource-item">
+          <div class="resource-icon">🚀</div>
+          <h3>API Development Guide</h3>
+          <p>Learn to build RESTful APIs with best practices and security considerations.</p>
+          <a href="#" class="btn btn-outline">View</a>
+        </div>
+        <div class="resource-item">
+          <div class="resource-icon">📱</div>
+          <h3>Mobile Development</h3>
+          <p>Introduction to responsive design and mobile-first development approaches.</p>
+          <a href="#" class="btn btn-outline">View</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="resources.js"></script>
+</body>
+
+</html>
+

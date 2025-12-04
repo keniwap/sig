@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Announcements - CODEX SIG</title>
+  <link rel="stylesheet" href="announcements.css" />
+  <link rel="icon" href="../img/codexlogo.png" />
+</head>
+
+<body>
+  <aside class="sidebar">
+    <div class="sidebar-header">
+      <img src="../img/codexlogo.png" alt="CODEX" />
+      <span>CODEX SIG</span>
+    </div>
+    <nav class="sidebar-nav">
+      <a href="studentdashboard.html">Overview</a>
+      <a href="sessions.html">Sessions</a>
+      <a href="announcements.html" class="active">Announcements</a>
+      <a href="participation.html">Participation</a>
+      <a href="resources.html">Resources</a>
+      <a href="accountmanagement.html">Account Management</a>
+    </nav>
+    <div class="sidebar-footer">
+      <button class="btn btn-logout-sidebar" id="logoutBtn">Logout</button>
+    </div>
+  </aside>
+
+  <main class="dashboard">
+    <header class="dashboard-header">
+      <div>
+        <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle menu">☰</button>
+        <h1>Announcements</h1>
+        <p>Stay updated with the latest news and updates from CODEX SIG.</p>
+      </div>
+      <div>
+        <button class="btn btn-outline" id="refreshAnnouncements">Refresh</button>
+      </div>
+    </header>
+
+    <section class="card announcements-section">
+      <div class="announcements-list" id="announcementsList">
+        <p class="helper-text">No announcements available. Check back later for updates.</p>
+      </div>
+    </section>
+  </main>
+
+  <script src="announcements.js"></script>
+</body>
+
+</html>
+

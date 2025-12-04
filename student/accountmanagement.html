@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Account Management - CODEX SIG</title>
+  <link rel="stylesheet" href="studentdashboard.css" />
+  <link rel="icon" href="../img/codexlogo.png" />
+</head>
+
+<body>
+  <aside class="sidebar">
+    <div class="sidebar-header">
+      <img src="../img/codexlogo.png" alt="CODEX" />
+      <span>CODEX SIG</span>
+    </div>
+    <nav class="sidebar-nav">
+      <a href="studentdashboard.html">Overview</a>
+      <a href="sessions.html">Sessions</a>
+      <a href="announcements.html">Announcements</a>
+      <a href="participation.html">Participation</a>
+      <a href="resources.html">Resources</a>
+      <a href="accountmanagement.html" class="active">Account Management</a>
+    </nav>
+    <div class="sidebar-footer">
+      <button class="btn btn-logout-sidebar" id="logoutBtn">Logout</button>
+    </div>
+  </aside>
+
+  <main class="dashboard">
+    <header class="dashboard-header">
+      <div>
+        <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle menu">☰</button>
+        <h1>Account Management</h1>
+        <p>Manage your account settings, password, and email preferences.</p>
+      </div>
+    </header>
+
+    <section class="card account-settings">
+      <div class="section-header clickable" id="emailHeader">
+        <h2>Change Email</h2>
+        <span class="toggle-icon">▼</span>
+      </div>
+      <form id="emailForm" class="settings-form" style="display: none;">
+        <div class="form-group">
+          <label for="currentEmail">Current Email</label>
+          <input type="email" id="currentEmail" name="currentEmail" readonly value="" />
+          <p class="helper-text">Your current email address</p>
+        </div>
+        <div class="form-group">
+          <label for="newEmail">New Email</label>
+          <input type="email" id="newEmail" name="newEmail" placeholder="Enter new email address" required />
+        </div>
+        <div class="form-group">
+          <label for="confirmEmail">Confirm New Email</label>
+          <input type="email" id="confirmEmail" name="confirmEmail" placeholder="Confirm new email address" required />
+        </div>
+        <button type="submit" class="btn btn-primary">Update Email</button>
+      </form>
+    </section>
+
+    <section class="card account-settings">
+      <div class="section-header clickable" id="passwordHeader">
+        <h2>Change Password</h2>
+        <span class="toggle-icon">▼</span>
+      </div>
+      <form id="passwordForm" class="settings-form" style="display: none;">
+        <div class="form-group">
+          <label for="currentPassword">Current Password</label>
+          <div class="password-toggle">
+            <input type="password" id="currentPassword" name="currentPassword" placeholder="Enter current password" required />
+            <button type="button" class="password-toggle-btn" aria-label="Show password" onclick="togglePasswordClick(event)">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7-11-7-11-7z"></path>
+                <circle cx="12" cy="12" r="3"></circle>
+              </svg>
+            </button>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="newPassword">New Password</label>
+          <div class="password-toggle">
+            <input type="password" id="newPassword" name="newPassword" placeholder="Enter new password" required minlength="8" />
+            <button type="button" class="password-toggle-btn" aria-label="Show password" onclick="togglePasswordClick(event)">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7-11-7-11-7z"></path>
+                <circle cx="12" cy="12" r="3"></circle>
+              </svg>
+            </button>
+          </div>
+          <p class="helper-text">Password must be at least 8 characters long</p>
+        </div>
+        <div class="form-group">
+          <label for="confirmPassword">Confirm New Password</label>
+          <div class="password-toggle">
+            <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirm new password" required minlength="8" />
+            <button type="button" class="password-toggle-btn" aria-label="Show password" onclick="togglePasswordClick(event)">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7-11-7-11-7z"></path>
+                <circle cx="12" cy="12" r="3"></circle>
+              </svg>
+            </button>
+          </div>
+        </div>
+        <button type="submit" class="btn btn-primary">Update Password</button>
+      </form>
+    </section>
+
+    <section class="card account-info">
+      <div class="section-header">
+        <h2>Account Information</h2>
+      </div>
+      <div class="info-grid">
+        <div class="info-item">
+          <span class="info-label">Full Name:</span>
+          <strong id="infoName">Student Name</strong>
+        </div>
+        <div class="info-item">
+          <span class="info-label">Student Number:</span>
+          <strong id="infoStudentNumber">2024-XXXXX</strong>
+        </div>
+        <div class="info-item">
+          <span class="info-label">Program:</span>
+          <strong id="infoProgram">BS Information Technology</strong>
+        </div>
+        <div class="info-item">
+          <span class="info-label">Year Level:</span>
+          <strong id="infoYearLevel">1st Year</strong>
+        </div>
+        <div class="info-item">
+          <span class="info-label">Account Created:</span>
+          <strong id="infoCreatedDate">November 15, 2024</strong>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="accountmanagement.js"></script>
+</body>
+
+</html>
+

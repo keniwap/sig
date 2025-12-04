@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Student Dashboard - CODEX SIG</title>
+  <link rel="stylesheet" href="studentdashboard.css" />
+  <link rel="icon" href="../img/codexlogo.png" />
+</head>
+
+<body>
+  <aside class="sidebar">
+    <div class="sidebar-header">
+      <img src="../img/codexlogo.png" alt="CODEX" />
+      <span>CODEX SIG</span>
+    </div>
+    <nav class="sidebar-nav">
+      <a href="studentdashboard.html" class="active">Overview</a>
+      <a href="sessions.html">Sessions</a>
+      <a href="announcements.html">Announcements</a>
+      <a href="participation.html">Participation</a>
+      <a href="resources.html">Resources</a>
+      <a href="accountmanagement.html">Account Management</a>
+    </nav>
+    <div class="sidebar-footer">
+      <button class="btn btn-logout-sidebar" id="logoutBtn">Logout</button>
+    </div>
+  </aside>
+
+  <main class="dashboard overview" id="overview">
+    <header class="dashboard-header">
+      <div>
+        <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle menu">☰</button>
+        <h1 id="welcomeMessage">Welcome back, Student!</h1>
+        <p>Your CODEX SIG portal keeps you updated on everything happening in the organization.</p>
+      </div>
+    </header>
+
+    <!-- Account Status Section -->
+    <section class="card account-status" id="accountStatus">
+      <div class="status-header">
+        <h2>Account Status</h2>
+        <span class="status-badge" id="memberStatus">Active Member</span>
+      </div>
+      <div class="status-details">
+        <div class="status-item">
+          <span class="status-label">Full Name:</span>
+          <strong id="studentName">Student Name</strong>
+        </div>
+        <div class="status-item">
+          <span class="status-label">Member of:</span>
+          <strong id="membershipType">CODEX SIG</strong>
+        </div>
+        <div class="status-item">
+          <span class="status-label">Payment Status:</span>
+          <strong id="paymentStatus" class="status-pending">Pending Payment</strong>
+        </div>
+        <div class="status-item">
+          <span class="status-label">Student Number:</span>
+          <strong id="studentNumber">2024-XXXXX</strong>
+        </div>
+        <div class="status-item">
+          <span class="status-label">Program:</span>
+          <strong id="studentProgram">BS Information Technology</strong>
+        </div>
+        <div class="status-item">
+          <span class="status-label">Year Level:</span>
+          <strong id="yearLevel">3ed Year</strong>
+        </div>
+        <div class="status-item">
+          <span class="status-label">Joined Date:</span>
+          <strong id="joinedDate">November 15, 2025</strong>
+        </div>
+      </div>
+      <div class="status-actions" id="paymentActions" style="display: none;">
+        <button class="btn btn-primary" id="payNowBtn">Pay Membership Fee</button>
+        <p class="helper-text">Complete your payment to access all features</p>
+      </div>
+    </section>
+
+    <section class="grid stats">
+      <article class="card stat">
+        <span class="label">Upcoming Session</span>
+        <strong id="nextSessionDate">Loading…</strong>
+        <p id="nextSessionTitle">Please wait</p>
+      </article>
+      <article class="card stat">
+        <span class="label">Announcements</span>
+        <strong id="announcementCount">0</strong>
+        <p>Unseen updates</p>
+      </article>
+      <article class="card stat">
+        <span class="label">Participation</span>
+        <strong id="participationRate">0%</strong>
+        <p>This month</p>
+      </article>
+    </section>
+
+    <section class="card participation-section compact" id="participation">
+      <div class="section-header">
+        <h2>Participation Overview</h2>
+      </div>
+      <div class="participation-stats">
+        <div class="participation-item">
+          <span class="participation-label">Sessions Attended</span>
+          <strong>8 / 10</strong>
+          <div class="progress-bar">
+            <div class="progress-fill" style="width: 80%"></div>
+          </div>
+          <p class="helper-text">Attend 2 more sessions to reach 100%</p>
+        </div>
+        <div class="participation-item">
+          <span class="participation-label">Monthly Rate</span>
+          <strong>82%</strong>
+          <div class="progress-bar">
+            <div class="progress-fill" style="width: 82%"></div>
+          </div>
+          <p class="helper-text">Great job staying active this month</p>
+        </div>
+        <div class="participation-item">
+          <span class="participation-label">Total Points</span>
+          <strong>245</strong>
+          <p class="helper-text">Earned through completed activities</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+
+  <script src="studentdashboard.js"></script>
+</body>
+
+</html>

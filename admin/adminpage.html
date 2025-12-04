@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Admin Dashboard - CODEX SIG</title>
+  <link rel="stylesheet" href="adminpage.css" />
+  <link rel="icon" href="../img/codexlogo.png" />
+</head>
+
+<body>
+  <aside class="sidebar">
+    <div class="sidebar-header">
+      <img src="../img/codexlogo.png" alt="CODEX logo" />
+      <span>CODEX Admin</span>
+    </div>
+    <nav class="sidebar-nav">
+      <a href="#overview" class="active">Overview</a>
+      <a href="#announcements">Announcements</a>
+      <a href="#sessions">Sessions</a>
+      <a href="#members">Members</a>
+      <a href="../index.html">Site Home</a>
+    </nav>
+    <div class="sidebar-footer">
+      <button class="btn btn-logout-sidebar" id="logoutBtn">Logout</button>
+    </div>
+  </aside>
+
+  <main class="dashboard" id="overview">
+    <header class="dashboard-header">
+      <div>
+        <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle menu">☰</button>
+        <h1>Admin Control Panel</h1>
+        <p>Manage CODEX SIG announcements, sessions, and member participation.</p>
+      </div>
+    </header>
+
+    <section class="grid stats">
+      <article class="card stat">
+        <span class="label">Total Members</span>
+        <strong id="totalMembers">0</strong>
+        <p>Total verified CODEX members</p>
+      </article>
+      <article class="card stat">
+        <span class="label">Pending Approvals</span>
+        <strong id="pendingApprovals">0</strong>
+        <p>Awaiting review</p>
+      </article>
+      <article class="card stat">
+        <span class="label">Upcoming Session</span>
+        <strong id="upcomingSessionDate">Loading…</strong>
+        <p id="upcomingSessionTitle">Please wait</p>
+      </article>
+      <article class="card stat">
+        <span class="label">Announcements Today</span>
+        <strong id="announcementToday">0</strong>
+        <p>Posts published</p>
+      </article>
+    </section>
+
+    <section class="card announcements-section" id="announcements">
+      <div class="section-header">
+        <h2>Create Announcement</h2>
+        <button class="btn btn-outline btn-sm" id="clearAnnouncement">Clear</button>
+      </div>
+      <form class="announcement-form" id="announcementForm">
+        <div class="form-row">
+          <label for="announcementTitle">Title</label>
+          <input type="text" id="announcementTitle" name="announcementTitle" placeholder="Enter announcement title" required />
+        </div>
+        <div class="form-row">
+          <label for="announcementBody">Message</label>
+          <textarea id="announcementBody" name="announcementBody" rows="4" placeholder="Write the announcement details" required></textarea>
+        </div>
+        <div class="form-row grid-row">
+          <label>
+            <span>Category</span>
+            <select id="announcementCategory" name="announcementCategory">
+              <option value="general">General</option>
+              <option value="urgent">Urgent</option>
+              <option value="event">Event</option>
+            </select>
+          </label>
+          <label>
+            <span>Visibility</span>
+            <select id="announcementVisibility" name="announcementVisibility">
+              <option value="members">Members only</option>
+              <option value="public">Public</option>
+            </select>
+          </label>
+        </div>
+        <button class="btn btn-primary" type="submit">Publish Announcement</button>
+      </form>
+
+      <div class="section-subheader">
+        <h3>Recent Announcements</h3>
+        <button class="btn btn-outline btn-sm" id="refreshAnnouncements">Refresh</button>
+      </div>
+      <div class="announcements-list" id="adminAnnouncementList">
+        <!-- JS populated -->
+      </div>
+    </section>
+
+    <section class="card schedule-section" id="sessions">
+      <div class="section-header">
+        <h2>Manage Sessions</h2>
+        <button class="btn btn-outline btn-sm" id="addSessionBtn">Add Session</button>
+      </div>
+      <div class="schedule-list" id="adminScheduleList">
+        <!-- JS populated -->
+      </div>
+    </section>
+
+    <section class="card members-section" id="members">
+      <div class="section-header">
+        <h2>Member Overview</h2>
+        <input type="search" class="search-input" id="memberSearch" placeholder="Search members..." />
+      </div>
+      <div class="member-filters">
+        <div class="filter-group">
+          <label for="filterProgram">Program:</label>
+          <select id="filterProgram" class="filter-select">
+            <option value="all">All Programs</option>
+            <option value="BS Computer Science">BSCS</option>
+            <option value="BS Information Technology">BSIT</option>
+            <option value="BS Information Systems">BSIS</option>
+          </select>
+        </div>
+        <div class="filter-group">
+          <label for="filterStatus">Status:</label>
+          <select id="filterStatus" class="filter-select">
+            <option value="all">All Status</option>
+            <option value="active">Active</option>
+            <option value="pending">Pending</option>
+            <option value="inactive">Inactive</option>
+          </select>
+        </div>
+        <div class="filter-group">
+          <label for="filterParticipation">Participation:</label>
+          <select id="filterParticipation" class="filter-select">
+            <option value="none">No Sort</option>
+            <option value="highest">Highest to Lowest</option>
+            <option value="lowest">Lowest to Highest</option>
+          </select>
+        </div>
+        <button class="btn btn-outline btn-sm" id="clearFilters">Clear Filters</button>
+      </div>
+      <div class="member-table-wrapper">
+        <table class="member-table">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Student No.</th>
+              <th>Program</th>
+              <th>Status</th>
+              <th>Participation</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="memberTableBody">
+            <!-- JS populated -->
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <div class="modal" id="sessionModal">
+    <div class="modal-dialog">
+      <div class="modal-header">
+        <h3 id="modalTitle">Add New Session</h3>
+        <button class="modal-close" id="closeModal">&times;</button>
+      </div>
+      <form id="sessionForm">
+        <label>
+          <span>Session Title</span>
+          <input type="text" id="sessionTitle" name="sessionTitle" required />
+        </label>
+        <label>
+          <span>Date</span>
+          <input type="date" id="sessionDate" name="sessionDate" required />
+        </label>
+        <div class="grid-two">
+          <label>
+            <span>Start Time</span>
+            <input type="time" id="sessionStart" name="sessionStart" required />
+          </label>
+          <label>
+            <span>End Time</span>
+            <input type="time" id="sessionEnd" name="sessionEnd" required />
+          </label>
+        </div>
+        <label>
+          <span>Location</span>
+          <input type="text" id="sessionLocation" name="sessionLocation" placeholder="Room or venue" required />
+        </label>
+        <label>
+          <span>Type</span>
+          <select id="sessionType" name="sessionType">
+            <option value="Workshop">Workshop</option>
+            <option value="Session">Session</option>
+            <option value="Meetup">Meetup</option>
+          </select>
+        </label>
+        <label>
+          <span>Description</span>
+          <textarea id="sessionDescription" name="sessionDescription" rows="3" required></textarea>
+        </label>
+        <div class="modal-actions">
+          <button type="button" class="btn btn-outline" id="cancelModal">Cancel</button>
+          <button type="submit" class="btn btn-primary">Save Session</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="adminpage.js"></script>
+</body>
+
+</html>
+

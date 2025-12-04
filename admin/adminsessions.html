@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sessions - Admin - CODEX SIG</title>
+  <link rel="stylesheet" href="adminsessions.css" />
+  <link rel="icon" href="../img/codexlogo.png" />
+</head>
+
+<body>
+  <aside class="sidebar">
+    <div class="sidebar-header">
+      <img src="../img/codexlogo.png" alt="CODEX logo" />
+      <span>CODEX Admin</span>
+    </div>
+    <nav class="sidebar-nav">
+      <a href="admindashboard.html">Overview</a>
+      <a href="adminannouncements.html">Announcements</a>
+      <a href="adminsessions.html" class="active">Sessions</a>
+      <a href="adminmembers.html">Members</a>
+      <a href="../index.html">Site Home</a>
+    </nav>
+    <div class="sidebar-footer">
+      <button class="btn btn-logout-sidebar" id="logoutBtn">Logout</button>
+    </div>
+  </aside>
+
+  <main class="dashboard">
+    <header class="dashboard-header">
+      <div>
+        <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle menu">☰</button>
+        <h1>Manage Sessions</h1>
+        <p>Create and manage CODEX SIG sessions, workshops, and meetups.</p>
+      </div>
+    </header>
+
+    <section class="card schedule-section">
+      <div class="section-header">
+        <h2>Manage Sessions</h2>
+        <button class="btn btn-outline btn-sm" id="addSessionBtn">Add Session</button>
+      </div>
+      <div class="schedule-list" id="adminScheduleList">
+        <!-- JS populated -->
+      </div>
+    </section>
+  </main>
+
+  <div class="modal" id="sessionModal">
+    <div class="modal-dialog">
+      <div class="modal-header">
+        <h3 id="modalTitle">Add New Session</h3>
+        <button class="modal-close" id="closeModal">&times;</button>
+      </div>
+      <form id="sessionForm">
+        <label>
+          <span>Session Title</span>
+          <input type="text" id="sessionTitle" name="sessionTitle" required />
+        </label>
+        <label>
+          <span>Date</span>
+          <input type="date" id="sessionDate" name="sessionDate" required />
+        </label>
+        <div class="grid-two">
+          <label>
+            <span>Start Time</span>
+            <input type="time" id="sessionStart" name="sessionStart" required />
+          </label>
+          <label>
+            <span>End Time</span>
+            <input type="time" id="sessionEnd" name="sessionEnd" required />
+          </label>
+        </div>
+        <label>
+          <span>Location</span>
+          <input type="text" id="sessionLocation" name="sessionLocation" placeholder="Room or venue" required />
+        </label>
+        <label>
+          <span>Type</span>
+          <select id="sessionType" name="sessionType">
+            <option value="Workshop">Workshop</option>
+            <option value="Session">Session</option>
+            <option value="Meetup">Meetup</option>
+          </select>
+        </label>
+        <label>
+          <span>Description</span>
+          <textarea id="sessionDescription" name="sessionDescription" rows="3" required></textarea>
+        </label>
+        <div class="modal-actions">
+          <button type="button" class="btn btn-outline" id="cancelModal">Cancel</button>
+          <button type="submit" class="btn btn-primary">Save Session</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="adminsessions.js"></script>
+</body>
+
+</html>
+

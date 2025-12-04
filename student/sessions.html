@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sessions - CODEX SIG</title>
+  <link rel="stylesheet" href="sessions.css" />
+  <link rel="icon" href="../img/codexlogo.png" />
+</head>
+
+<body>
+  <aside class="sidebar">
+    <div class="sidebar-header">
+      <img src="../img/codexlogo.png" alt="CODEX" />
+      <span>CODEX SIG</span>
+    </div>
+    <nav class="sidebar-nav">
+      <a href="studentdashboard.html">Overview</a>
+      <a href="sessions.html" class="active">Sessions</a>
+      <a href="announcements.html">Announcements</a>
+      <a href="participation.html">Participation</a>
+      <a href="resources.html">Resources</a>
+      <a href="accountmanagement.html">Account Management</a>
+    </nav>
+    <div class="sidebar-footer">
+      <button class="btn btn-logout-sidebar" id="logoutBtn">Logout</button>
+    </div>
+  </aside>
+
+  <main class="dashboard">
+    <header class="dashboard-header">
+      <div>
+        <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle menu">☰</button>
+        <h1>Monthly Schedule</h1>
+        <p>View all upcoming CODEX SIG sessions, workshops, and meetups.</p>
+      </div>
+    </header>
+
+    <section class="card schedule-section">
+      <div class="section-header">
+        <h2>Filter Sessions</h2>
+        <div class="schedule-filters">
+          <button class="filter-btn active" data-filter="all">All</button>
+          <button class="filter-btn" data-filter="workshop">Workshops</button>
+          <button class="filter-btn" data-filter="session">Sessions</button>
+          <button class="filter-btn" data-filter="meetup">Meetups</button>
+        </div>
+      </div>
+      <div class="schedule-list" id="scheduleList">
+        <p class="helper-text">No sessions scheduled. Check back later for updates.</p>
+      </div>
+    </section>
+  </main>
+
+  <script src="sessions.js"></script>
+</body>
+
+</html>
+

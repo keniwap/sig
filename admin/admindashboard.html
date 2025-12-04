@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Admin Dashboard - CODEX SIG</title>
+  <link rel="stylesheet" href="admindashboard.css" />
+  <link rel="icon" href="../img/codexlogo.png" />
+</head>
+
+<body>
+  <aside class="sidebar">
+    <div class="sidebar-header">
+      <img src="../img/codexlogo.png" alt="CODEX logo" />
+      <span>CODEX Admin</span>
+    </div>
+    <nav class="sidebar-nav">
+      <a href="admindashboard.html" class="active">Overview</a>
+      <a href="adminannouncements.html">Announcements</a>
+      <a href="adminsessions.html">Sessions</a>
+      <a href="adminmembers.html">Members</a>
+      <a href="../index.html">Site Home</a>
+    </nav>
+    <div class="sidebar-footer">
+      <button class="btn btn-logout-sidebar" id="logoutBtn">Logout</button>
+    </div>
+  </aside>
+
+  <main class="dashboard">
+    <header class="dashboard-header">
+      <div>
+        <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle menu">☰</button>
+        <h1>Admin Control Panel</h1>
+        <p>Manage CODEX SIG announcements, sessions, and member participation.</p>
+      </div>
+    </header>
+
+    <section class="grid stats">
+      <article class="card stat">
+        <span class="label">Total Members</span>
+        <strong id="totalMembers">0</strong>
+        <p>Total verified CODEX members</p>
+      </article>
+      <article class="card stat">
+        <span class="label">Pending Approvals</span>
+        <strong id="pendingApprovals">0</strong>
+        <p>Awaiting review</p>
+      </article>
+      <article class="card stat">
+        <span class="label">Upcoming Session</span>
+        <strong id="upcomingSessionDate">Loading…</strong>
+        <p id="upcomingSessionTitle">Please wait</p>
+      </article>
+      <article class="card stat">
+        <span class="label">Announcements Today</span>
+        <strong id="announcementToday">0</strong>
+        <p>Posts published</p>
+      </article>
+    </section>
+  </main>
+
+  <script src="admindashboard.js"></script>
+</body>
+
+</html>
+

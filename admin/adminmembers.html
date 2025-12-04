@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Members - Admin - CODEX SIG</title>
+  <link rel="stylesheet" href="adminmembers.css" />
+  <link rel="icon" href="../img/codexlogo.png" />
+</head>
+
+<body>
+  <aside class="sidebar">
+    <div class="sidebar-header">
+      <img src="../img/codexlogo.png" alt="CODEX logo" />
+      <span>CODEX Admin</span>
+    </div>
+    <nav class="sidebar-nav">
+      <a href="admindashboard.html">Overview</a>
+      <a href="adminannouncements.html">Announcements</a>
+      <a href="adminsessions.html">Sessions</a>
+      <a href="adminmembers.html" class="active">Members</a>
+      <a href="../index.html">Site Home</a>
+    </nav>
+    <div class="sidebar-footer">
+      <button class="btn btn-logout-sidebar" id="logoutBtn">Logout</button>
+    </div>
+  </aside>
+
+  <main class="dashboard">
+    <header class="dashboard-header">
+      <div>
+        <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle menu">☰</button>
+        <h1>Member Overview</h1>
+        <p>Manage CODEX SIG member accounts, approvals, and participation.</p>
+      </div>
+    </header>
+
+    <section class="card members-section">
+      <div class="section-header">
+        <h2>Member Overview</h2>
+        <input type="search" class="search-input" id="memberSearch" placeholder="Search members..." />
+      </div>
+      <div class="member-filters">
+        <div class="filter-group">
+          <label for="filterProgram">Program:</label>
+          <select id="filterProgram" class="filter-select">
+            <option value="all">All Programs</option>
+            <option value="BS Computer Science">BSCS</option>
+            <option value="BS Information Technology">BSIT</option>
+            <option value="BS Information Systems">BSIS</option>
+          </select>
+        </div>
+        <div class="filter-group">
+          <label for="filterStatus">Status:</label>
+          <select id="filterStatus" class="filter-select">
+            <option value="all">All Status</option>
+            <option value="active">Active</option>
+            <option value="pending">Pending</option>
+            <option value="inactive">Inactive</option>
+          </select>
+        </div>
+        <div class="filter-group">
+          <label for="filterParticipation">Participation:</label>
+          <select id="filterParticipation" class="filter-select">
+            <option value="none">No Sort</option>
+            <option value="highest">Highest to Lowest</option>
+            <option value="lowest">Lowest to Highest</option>
+          </select>
+        </div>
+        <button class="btn btn-outline btn-sm" id="clearFilters">Clear Filters</button>
+      </div>
+      <div class="member-table-wrapper">
+        <table class="member-table">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Student No.</th>
+              <th>Program</th>
+              <th>Status</th>
+              <th>Participation</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="memberTableBody">
+            <!-- JS populated -->
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <script src="adminmembers.js"></script>
+</body>
+
+</html>
+
